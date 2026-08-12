@@ -17,8 +17,6 @@ const HeaderComponent = () => {
   const isLoading = useGlobalLoading((s) => s.isLoading)
   const setLoadingFalse = useGlobalLoading(s => s.setLoadingFalse)
 
-  console.log({ isLoading })
-
   useEffect(() => {
     const raw = localStorage.getItem('dark')
     const isDarkLocalStorage = raw ? JSON.parse(raw) : false;
