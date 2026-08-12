@@ -4,6 +4,8 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@phosphor-icons/react";
+import { BasketIcon } from "@phosphor-icons/react/dist/ssr";
+import HeaderBasketComponent from "@/components/modules/Header/HeaderBasket";
 
 const HeaderComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -27,6 +29,8 @@ const HeaderComponent = () => {
         <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="p-3">
           {isDarkMode ? <SunIcon className="size-6" /> : <MoonIcon className="size-6" />}
         </Button>
+        <Separator orientation="vertical" />
+        <HeaderBasketComponent />
         <Separator orientation="vertical" />
         <HeaderDialog mode="LOGIN" />
         <HeaderDialog mode="SIGNUP" />
