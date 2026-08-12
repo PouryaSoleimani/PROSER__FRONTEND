@@ -1,43 +1,33 @@
 "use client";
-import MoltenMetal from "@/components/MoltenMetal";
+import ShapeGrid from "@/components/ShapeGrid";
 import { Button } from "@/components/ui/button";
 import { CaretDownIcon } from "@phosphor-icons/react";
 
 const HomePageHeroSection = () => {
   return (
-    <div style={{ width: "100%", height: "1200px", position: "relative" }}>
-      <MoltenMetal
-        color1="#5227FF"
-        color2="#FF9FFC"
-        color3="#FFFFFF"
-        speed={0.35}
-        scale={4}
-        detail={3}
-        glow={1.6}
-        coreSize={0.1}
-        swirl={1}
-        fold={-0.2}
-        blackPoint={0.05}
-        brightness={1.3}
-        colorMode="molten"
-        grain
-        grainIntensity={0.05}
-        mouseInteraction
-        mouseStrength={0.3}
-        opacity={1}
-        className="relative"
+    <div style={{ width: '100%', height: '1200px', position: 'relative' }}>
+      <ShapeGrid
+        speed={0.5}
+        squareSize={40}
+        direction='diagonal'
+        borderColor="#303030"
+        hoverFillColor='#222'
+        shape='square'
+        hoverTrailAmount={0}
+        hoverColor="#222222"
+        size={40}
       />
       <div className="absolute inset-0 border border-t-0 h-full grid align-items-center items-center justify-center justify-items-center">
         <div className="content flex flex-col items-center-safe gap-16">
           <div className="pill h-fit bg-fuchsia-950/10 backdrop-blur-lg rounded-full flex items-center gap-3 pl-2 py-2 pr-4 border">
             <span className="bg-white text-black py-1 px-3 font-semibold text-sm rounded-full">NEW</span>
             <h4 className="text-zinc-300 font-bold">
-              <span className="text-orange-500">SoundCloud</span> GO+
+              <span className="text-foreground">DESERT EAGLE</span> <span className="text-muted-foreground">9mm</span>
             </h4>
           </div>
-          <div className="hero__moto max-w-2/3 text-3xl font-bold text-center">
-            <h2 className="text-6xl underline m-0 blackops font-semibold">PROSER</h2>
-            <h4 className="jetbrains leading-10 mt-3 text-muted-foreground">WHERE YOU CAN ACCESS EVERY PLATFORM SUBSCRIPTION YOU WANT</h4>
+          <div className="hero__moto text-3xl font-bold text-center">
+            <h2 className="text-6xl underline m-0 blackops font-semibold bg-background py-1 w-fit px-3 rounded-xs mx-auto">ON-LOAD</h2>
+            <h4 className="jetbrains leading-10 mt-3 bg-transparent backdrop-blur-3xl p-1 rounded-xl text-foreground ">Choose and Load Your Weapons Online. <br /> We Will Take Care Of Cups</h4>
           </div>
           <div className="buttons flex gap-4">
             <Button role="link" variant={"white"} size={"xl"} className={"rounded-sm"}>

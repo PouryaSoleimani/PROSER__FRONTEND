@@ -4,7 +4,6 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@phosphor-icons/react";
-import { BasketIcon } from "@phosphor-icons/react/dist/ssr";
 import HeaderBasketComponent from "@/components/modules/Header/HeaderBasket";
 
 const HeaderComponent = () => {
@@ -23,7 +22,7 @@ const HeaderComponent = () => {
   return (
     <div className="bg-white/10 mt-2 w-8/12 backdrop-blur-2xl fixed left-0 right-0 top-2 z-2 py-1.5 border-1 shadow-sm shadow-accent grid grid-cols-2 items-center justify-between rounded-lg mx-auto px-2.5">
       <div className="flex gap-4 items-center" id="LOGO">
-        <h2 className="text-3xl m-0 blackops font-semibold">PROSER</h2>
+        <h2 className="text-3xl m-0 blackops font-semibold">ON-LOAD</h2>
       </div>
       <div className="flex gap-2 justify-self-end">
         <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="p-3">
