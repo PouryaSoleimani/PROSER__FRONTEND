@@ -5,7 +5,7 @@ const SingleProductPage = async ({ params }: PageProps<AppRoutes>) => {
   const ID: string = (val as { productID: string }).productID
   console.log({ ID })
   return (
-    <div className="bg-black h-full">{ID}</div>
+    <div className="min-h-screen grid place-items-center">{ID}</div>
   )
 }
 

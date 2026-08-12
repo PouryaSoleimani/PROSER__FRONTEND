@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet" />
       </head>
-      <body className="min-h-full pt-32 grid flex-col grid-rows-3 transition-none ">
+      <body className="min-h-full  grid flex-col grid-rows-3 transition-none ">
         <Providers>
           <HeaderComponent />
           {children}

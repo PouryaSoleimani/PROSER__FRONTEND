@@ -10,12 +10,14 @@ import HeaderSearchInputComponent from "@/components/modules/Header/HeaderSearch
 import { cn } from "@/lib/utils";
 import HeaderSheetComponent from "@/components/modules/Header/HeaderSheet";
 import useGlobalLoading from "@/store/globalLoading";
+import { usePathname } from "next/navigation";
 
 const HeaderComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeNav, setActiveNav] = useState("")
-
+  const location = usePathname()
+  console.log({ location })
   const isLoading = useGlobalLoading((s) => s.isLoading)
   const setLoadingFalse = useGlobalLoading(s => s.setLoadingFalse)
 
@@ -119,11 +121,14 @@ const HeaderComponent = () => {
           </div>
 
           {/* BOTTOM NAV */}
-          <nav className="bg-background text-foreground font-semibold pt-2 pb-1 flex items-center justify-between px-25 text-xs">
-            {navLinks.map((link) => (
-              <a onClick={() => setActiveNav(link.href.replace("#", ""))} key={link.id} href={link.href} className={cn("header__anchor", link.href.replace("#", "") == activeNav && "active")}>{link.text}</a>
-            ))}
-          </nav>
+          {location == "/" &&
+            <nav className="bg-background border-b border-b-foreground/10 text-foreground font-semibold pt-2 pb-1 flex items-center justify-between px-25 text-xs">
+              {navLinks.map((link) => (
+                <a onClick={() => setActiveNav(link.href.replace("#", ""))} key={link.id} href={link.href} className={cn("header__anchor", link.href.replace("#", "") == activeNav && "active")}>{link.text}</a>
+              ))}
+            </nav>
+          }
+
         </div>
       ) : (
         <div className="fixed min-h-vh inset-0 bg-black text-white flex items-center flex-col gap-6 justify-center z-3">
