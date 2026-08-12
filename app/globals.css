@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+body {
   --background: #ffffff;
   --foreground: #171717;
   --gray-light: #f8f8f8;
@@ -8,25 +8,31 @@
   --accent: #000;
 }
 
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Geist Mono";
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+  * {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+body.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --gray-light: #ffffff;
+  --gray: #808080;
+  --accent: #ffffff;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --gray-light: #414040;
-    --gray: #808080;
-    --accent: #000;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "Geist Mono";
 }
