@@ -40,6 +40,7 @@
   --sidebar-ring: oklch(0.708 0 0);
   --outline: #aeadad50;
   --brand: #000000;
+  --success: #b3f79c;
 }
 html {
   scroll-behavior: smooth;
@@ -52,7 +53,7 @@ body {
   overscroll-behavior: none;
   margin: 0;
   grid-template-rows: auto 1fr auto;
-  
+
   accent-color: var(--foreground);
   text-emphasis-color: var(--foreground);
 }
@@ -93,6 +94,7 @@ body.dark {
   --outline: #ffffff05;
   --brand: #000000;
   --brand-hover: rgb(33, 33, 33);
+  --success: #1e3616;
 }
 
 img {
@@ -106,6 +108,7 @@ img {
   --color-outline: var(--outline);
   --color-brand: var(--brand);
   --color-brand-hover: var(--brand-hover);
+  --color-success: var(--success);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-mono);

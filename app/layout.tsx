@@ -6,12 +6,13 @@ import FooterComponent from "@/components/layout/footer";
 import { JetBrains_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Providers } from "./providers";
+import { Toaster } from 'sonner'
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: "ON-LOAD",
   description: "Load Your Weapon Online",
-  creator: "Pourya Soleimani"
+  creator: "Pourya Soleimani",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full  grid flex-col grid-rows-3 transition-none ">
         <Providers>
           <HeaderComponent />
+          <Toaster position="top-right" />
           {children}
           <FooterComponent />
         </Providers>

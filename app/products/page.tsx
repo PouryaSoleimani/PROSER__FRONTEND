@@ -1,6 +1,6 @@
 const ProductsPage = () => {
   return (
-    <div>ProductsPage</div>
+    <div className="min-h-[94vh]">ProductsPage</div>
   )
 }
 

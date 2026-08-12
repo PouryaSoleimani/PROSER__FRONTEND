@@ -1,13 +1,13 @@
+//^ HOME PAGE
 import HomePageHeroSection from "@/components/modules/HomePage/Hero";
 import GridWrapperComponent from "@/components/modules/HomePage/Products";
 
-// HOME PAGE
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="main__container">
       <HomePageHeroSection />
-      <GridWrapperComponent id="CATEGORIES" title="Categories" />
-      <GridWrapperComponent id="FREQUENTLY_ADDED" title="Freqeuntly Added Products" />
+      <GridWrapperComponent link="/" id="CATEGORIES" title="Categories" />
+      <GridWrapperComponent link="/products" id="FREQUENTLY_ADDED" title="Freqeuntly Added Products" />
     </div>
   );
 }

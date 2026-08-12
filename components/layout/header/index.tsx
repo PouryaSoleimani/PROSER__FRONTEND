@@ -11,35 +11,35 @@ import { cn } from "@/lib/utils";
 import HeaderSheetComponent from "@/components/modules/Header/HeaderSheet";
 import useGlobalLoading from "@/store/globalLoading";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const HeaderComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeNav, setActiveNav] = useState("")
-  const location = usePathname()
-  console.log({ location })
-  const isLoading = useGlobalLoading((s) => s.isLoading)
-  const setLoadingFalse = useGlobalLoading(s => s.setLoadingFalse)
+  const [activeNav, setActiveNav] = useState("");
+  const location = usePathname();
+  console.log({ location });
+  const isLoading = useGlobalLoading((s) => s.isLoading);
+  const setLoadingFalse = useGlobalLoading((s) => s.setLoadingFalse);
 
   useEffect(() => {
-    const raw = localStorage.getItem('dark')
+    const raw = localStorage.getItem("dark");
     const isDarkLocalStorage = raw ? JSON.parse(raw) : false;
 
     if (isDarkLocalStorage == true) {
-      document.body.classList.add('dark')
+      document.body.classList.add("dark");
     }
     setIsDarkMode(isDarkLocalStorage);
 
     setTimeout(() => {
-      setLoadingFalse()
+      setLoadingFalse();
     }, 300);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
   const toggleDarkMode = () => {
     document.body.classList.toggle("dark");
-    const isDark = !!document.body.classList.contains('dark')
+    const isDark = !!document.body.classList.contains("dark");
     document.body.classList.toggle("dark", isDark);
     localStorage.setItem("dark", JSON.stringify(isDark));
     setIsDarkMode(isDark);
@@ -60,27 +60,27 @@ const HeaderComponent = () => {
     };
   }, []);
 
-  // TOGGLE NAVBAR ACTIVE 
+  // TOGGLE NAVBAR ACTIVE
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const toggleActiveNav = (e: any) => {
-      document.querySelectorAll("header__anchor").forEach(item => {
-        item.classList.remove('active')
-      })
-      console.log("aCTIVE")
-      e.currentTarget.classList.add('active')
-    }
+      document.querySelectorAll("header__anchor").forEach((item) => {
+        item.classList.remove("active");
+      });
+      console.log("aCTIVE");
+      e.currentTarget.classList.add("active");
+    };
 
-    document.querySelectorAll('.header__anchor').forEach(item => {
-      item.addEventListener('click', toggleActiveNav)
-    })
+    document.querySelectorAll(".header__anchor").forEach((item) => {
+      item.addEventListener("click", toggleActiveNav);
+    });
 
     return () => {
-      document.querySelectorAll('.header__anchor').forEach(item => {
-        item.removeEventListener('click', toggleActiveNav)
-      })
-    }
-  }, [])
+      document.querySelectorAll(".header__anchor").forEach((item) => {
+        item.removeEventListener("click", toggleActiveNav);
+      });
+    };
+  }, []);
 
   return (
     <>
@@ -88,19 +88,20 @@ const HeaderComponent = () => {
         <div className={cn("fixed left-0 right-0 top-0 z-2 transition-all duration-500 ease-in-out", isScrolled && "-top-9")}>
           {/* PROMO BAR */}
           <div className="banner bg-black text-white py-2 grid justify-center">
-            <span className="flex items-center gap-3 text-sm font-bold"><StarFourIcon weight="fill" className="text-yellow-500 size-5" /> 30% OFF FOR 4TH OF JULY</span>
+            <span className="flex items-center gap-3 text-sm font-bold">
+              <StarFourIcon weight="fill" className="text-yellow-500 size-5" /> 30% OFF FOR 4TH OF JULY
+            </span>
           </div>
 
           {/* HEADER MAIN */}
           <div className="bg-accent/50 w-full backdrop-blur-3xl py-1.5 shadow-xs shadow-muted grid grid-cols-2 items-center justify-between rounded-none mx-auto px-24">
             {/* MAIN LEFT */}
-            <div className="flex gap-4 items-center" id="LOGO">
+            <Link href={"/"} className="flex gap-4 items-center" id="LOGO">
               <h2 className="text-3xl m-0 blackops text-background grid items-center h-fit bg-foreground px-4 py-1 font-semibold">ON-LOAD</h2>
-            </div>
+            </Link>
 
             {/* MAIN RIGHT */}
             <div className="flex gap-2 justify-self-end">
-
               <HeaderSearchInputComponent />
               <Separator orientation="vertical" />
 
@@ -121,14 +122,15 @@ const HeaderComponent = () => {
           </div>
 
           {/* BOTTOM NAV */}
-          {location == "/" &&
+          {location == "/" && (
             <nav className="bg-background border-b border-b-foreground/10 text-foreground font-semibold pt-2 pb-1 flex items-center justify-between px-25 text-xs">
               {navLinks.map((link) => (
-                <a onClick={() => setActiveNav(link.href.replace("#", ""))} key={link.id} href={link.href} className={cn("header__anchor", link.href.replace("#", "") == activeNav && "active")}>{link.text}</a>
+                <a onClick={() => setActiveNav(link.href.replace("#", ""))} key={link.id} href={link.href} className={cn("header__anchor", link.href.replace("#", "") == activeNav && "active")}>
+                  {link.text}
+                </a>
               ))}
             </nav>
-          }
-
+          )}
         </div>
       ) : (
         <div className="fixed min-h-vh inset-0 bg-black text-white flex items-center flex-col gap-6 justify-center z-3">
@@ -140,19 +142,17 @@ const HeaderComponent = () => {
           LOADING
         </div>
       )}
-
     </>
   );
 };
 
 export default HeaderComponent;
 
-
 const navLinks = [
-  { id: 1, text: 'Categories', href: "#CATEGORIES" },
-  { id: 2, text: 'Products', href: "#PRODUCTS" },
-  { id: 3, text: 'Outlet', href: "#OUTLET" },
-  { id: 4, text: 'Frequently Added', href: "#FREQUENTLY_ADDED" },
-  { id: 5, text: 'Subscribe', href: "#SUBSCRIBE" },
-  { id: 6, text: 'Become A Seller', href: "#BECOME" }
-]
+  { id: 1, text: "Categories", href: "#CATEGORIES" },
+  { id: 2, text: "Products", href: "#PRODUCTS" },
+  { id: 3, text: "Outlet", href: "#OUTLET" },
+  { id: 4, text: "Frequently Added", href: "#FREQUENTLY_ADDED" },
+  { id: 5, text: "Subscribe", href: "#SUBSCRIBE" },
+  { id: 6, text: "Become A Seller", href: "#BECOME" },
+];

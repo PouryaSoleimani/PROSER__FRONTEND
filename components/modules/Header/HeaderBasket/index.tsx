@@ -11,8 +11,9 @@ import { CurrencyDollarIcon, LinkIcon, BasketIcon, TrashIcon } from "@phosphor-i
 const HeaderBasketComponent = () => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="ghost" />}>
+      <DropdownMenuTrigger className={'relative'} render={<Button variant="ghost" />}>
         <BasketIcon className="size-6" />
+        <span className="absolute -top-2 text-[12px] -right-1 grid bg-red-900 text-white px-1">2</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent className={'w-fit p-4 mt-3 rounded-none outline-6 outline-outline'}>
         <DropdownMenuGroup className={'pb-2'}>
