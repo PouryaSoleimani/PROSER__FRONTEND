@@ -38,6 +38,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --outline: #aeadad50;
+  --brand: #550567;
 }
 
 body {
@@ -84,6 +85,8 @@ body.dark {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
   --outline: #ffffff05;
+  --brand: #550567;
+  --brand-hover: rgb(116, 15, 139);
 }
 
 img {
@@ -95,6 +98,8 @@ img {
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-outline: var(--outline);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-mono);
@@ -148,4 +153,9 @@ img {
 }
 .jetbrains {
   font-family: "JetBrains Mono";
+}
+.blackops{
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }

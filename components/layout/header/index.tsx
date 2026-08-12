@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import LOGO from "@/public/logo.png";
 import HeaderDialog from "@/components/modules/Header/HeaderDialog";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -21,10 +19,9 @@ const HeaderComponent = () => {
   };
 
   return (
-    <div className="bg-accent/50 mt-2 w-11/12 backdrop-blur-xl sticky top-2 z-2 py-2 outline-4 outline-outline grid grid-cols-2 items-center justify-between rounded-lg mx-auto px-16">
+    <div className="bg-white/10 mt-2 w-8/12 backdrop-blur-xl fixed left-0 right-0 top-2 z-2 py-1.5 border-1 shadow-sm shadow-accent grid grid-cols-2 items-center justify-between rounded-lg mx-auto px-2.5">
       <div className="flex gap-4 items-center" id="LOGO">
-        <Image src={LOGO} width={30} alt="logo" className="-translate-y-0.5" />
-        <h2 className="text-3xl m-0 jetbrains font-semibold">PROSER</h2>
+        <h2 className="text-3xl m-0 blackops font-semibold">PROSER</h2>
       </div>
       <div className="flex gap-2 justify-self-end">
         <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="p-3">
