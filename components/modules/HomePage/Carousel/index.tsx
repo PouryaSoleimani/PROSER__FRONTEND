@@ -3,12 +3,12 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const HomePageCarouselComponent = () => {
   return (
-    <Carousel className="w-full my-4 drop-shadow-xl drop-shadow-accent ">
+    <Carousel className="w-full my-12 drop-shadow-sm rounded-lg drop-shadow-accent outline-[18px] outline-white/5">
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
+          <CarouselItem key={index} className="border-none ">
             <div className="p-1">
-              <Card>
+              <Card className="rounded-sm border-none ring-0 ">
                 <CardContent className="flex h-100 items-center justify-center p-6">
                   <span className="text-4xl font-semibold">{index + 1}</span>
                 </CardContent>

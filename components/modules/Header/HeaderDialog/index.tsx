@@ -13,7 +13,7 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
     <Dialog>
       <form>
         <DialogTrigger render={<Button variant={mode == "LOGIN" ? "outline" : "default"}>{mode == "LOGIN" ? "Login" : "SignUp"}</Button>} />
-        <DialogContent className="sm:max-w-sm">
+        <DialogContent className="sm:max-w-sm ring-0">
           <DialogHeader>
             <DialogTitle>{mode == "LOGIN" ? "WELCOME BACK 🎉" : "JOIN US NOW ❤"}</DialogTitle>
             <DialogDescription></DialogDescription>
