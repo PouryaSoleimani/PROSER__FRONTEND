@@ -4,8 +4,9 @@ import HeaderComponent from "@/components/layout/header";
 import FooterComponent from "@/components/layout/footer";
 import { JetBrains_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Providers } from "./providers";
 
-const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: "PROSER",
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={cn("h-full", "antialiased", "font-mono", jetbrainsMono.variable)}>
+    <html lang="en" className={cn("h-full", "antialiased", "font-mono", jetbrainsMono.variable)} suppressHydrationWarning>
       <body className="min-h-full grid flex-col grid-rows-3 dark">
-        <HeaderComponent />
-        {children}
-        <FooterComponent />
+        <Providers>
+          <HeaderComponent />
+          {children}
+          <FooterComponent />
+        </Providers>
       </body>
     </html>
   );
