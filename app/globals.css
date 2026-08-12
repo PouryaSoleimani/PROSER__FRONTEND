@@ -37,6 +37,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --outline: #aeadad50;
 }
 
 body {
@@ -47,7 +48,7 @@ body {
   overscroll-behavior: none;
   margin: 0;
   padding: 0;
-  grid-template-rows: 1fr 14fr 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 
 body.dark {
@@ -82,6 +83,7 @@ body.dark {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --outline: #ffffff05;
 }
 
 img {
@@ -92,6 +94,7 @@ img {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-outline: var(--outline);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-mono);

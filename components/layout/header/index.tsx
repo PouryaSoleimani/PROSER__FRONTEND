@@ -17,12 +17,11 @@ const HeaderComponent = () => {
 
   const toggleDarkMode = () => {
     document.body.classList.toggle("dark");
-
     setIsDarkMode(document.body.classList.contains("dark"));
   };
 
   return (
-    <div className="bg-accent grid grid-cols-2 items-center justify-between w-full px-16">
+    <div className="bg-accent/50 mt-2 w-11/12 backdrop-blur-xl sticky top-2 z-2 py-2 outline-4 outline-outline grid grid-cols-2 items-center justify-between rounded-lg mx-auto px-16">
       <div className="flex gap-4 items-center" id="LOGO">
         <Image src={LOGO} width={30} alt="logo" className="-translate-y-0.5" />
         <h2 className="text-3xl m-0 jetbrains font-semibold">PROSER</h2>

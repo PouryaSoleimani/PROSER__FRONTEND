@@ -3,7 +3,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const HomePageCarouselComponent = () => {
   return (
-    <Carousel className="w-full my-12 drop-shadow-sm rounded-lg drop-shadow-accent outline-[18px] outline-white/5">
+    <Carousel className="w-full my-12 drop-shadow-sm rounded-lg drop-shadow-accent outline-[8px] border-0 ring-0 outline-outline">
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index} className="border-none ">
