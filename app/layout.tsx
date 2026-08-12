@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import HeaderComponent from "@/components/layout/header";
 import FooterComponent from "@/components/layout/footer";
+import { JetBrains_Mono } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
 
 export const metadata: Metadata = {
   title: "PROSER",
@@ -10,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`h-full antialiased`}>
+    <html lang="en" className={cn("h-full", "antialiased", "font-mono", jetbrainsMono.variable)}>
       <body className="min-h-full grid flex-col grid-rows-3 dark">
         <HeaderComponent />
         {children}
