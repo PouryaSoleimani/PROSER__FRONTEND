@@ -19,7 +19,7 @@ const HeaderComponent = () => {
   };
 
   return (
-    <div className="bg-white/10 mt-2 w-8/12 backdrop-blur-xl fixed left-0 right-0 top-2 z-2 py-1.5 border-1 shadow-sm shadow-accent grid grid-cols-2 items-center justify-between rounded-lg mx-auto px-2.5">
+    <div className="bg-white/10 mt-2 w-8/12 backdrop-blur-2xl fixed left-0 right-0 top-2 z-2 py-1.5 border-1 shadow-sm shadow-accent grid grid-cols-2 items-center justify-between rounded-lg mx-auto px-2.5">
       <div className="flex gap-4 items-center" id="LOGO">
         <h2 className="text-3xl m-0 blackops font-semibold">PROSER</h2>
       </div>

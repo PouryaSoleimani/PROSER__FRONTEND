@@ -5,7 +5,7 @@ import { CaretDownIcon } from "@phosphor-icons/react";
 
 const HomePageHeroSection = () => {
   return (
-    <div style={{ width: "100%", height: "900px", position: "relative" }}>
+    <div style={{ width: "100%", height: "1200px", position: "relative" }}>
       <MoltenMetal color1="#5227FF" color2="#FF9FFC" color3="#FFFFFF" speed={0.35} scale={4} detail={3} glow={1.6} coreSize={0.1} swirl={1} fold={-0.2} blackPoint={0.05} brightness={1.3} colorMode="molten" grain grainIntensity={0.05} mouseInteraction mouseStrength={0.3} opacity={1} className="relative" />
       <div className="absolute inset-0 border border-t-0 h-full grid align-items-center items-center justify-center justify-items-center">
         <div className="content flex flex-col items-center-safe gap-16">
@@ -26,7 +26,7 @@ const HomePageHeroSection = () => {
               Learn More
             </Button>
           </div>
-          <a href="#" className="bg-foreground p-2 text-background rounded-lg animate-bounce cursor-pointer">
+          <a href="#products__h3" className="bg-foreground p-2 text-background rounded-lg animate-bounce cursor-pointer">
             <CaretDownIcon className="size-8" />
           </a>
         </div>
