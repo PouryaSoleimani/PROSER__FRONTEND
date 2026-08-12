@@ -2,12 +2,13 @@ import SingleProductCardComponent from "../SingleProduct";
 
 type GridWrapperComponentPropsType = {
   title: string,
+  id?: string,
   dataArray?: { [key: string]: string | number }[]
 }
 
-const GridWrapperComponent = ({ title }: GridWrapperComponentPropsType) => {
+const GridWrapperComponent = ({ title, id }: GridWrapperComponentPropsType) => {
   return (
-    <section className="grided-container">
+    <section id={id} className="grided-container smt-32">
       <h3 id="products__h3" className="blackops pt-30 grid place-items-center text-4xl underline font-medium">
         {title}
       </h3>

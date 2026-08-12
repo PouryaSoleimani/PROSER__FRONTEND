@@ -197,3 +197,7 @@ img {
   background-size: 85px 85px;
   position: relative;
 }
+
+.smt-32 {
+  scroll-margin-top: 32px;
+}

@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <div className="main__container">
       <HomePageHeroSection />
-      <GridWrapperComponent title="Categories" />
-      <GridWrapperComponent title="Freqeuntly Added Products" />
+      <GridWrapperComponent id="CATEGORIES" title="Categories" />
+      <GridWrapperComponent id="FREQUENTLY_ADDED" title="Freqeuntly Added Products" />
     </div>
   );
 }
