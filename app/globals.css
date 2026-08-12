@@ -38,7 +38,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --outline: #aeadad50;
-  --brand: #550567;
+  --brand: #000000;
 }
 
 body {
@@ -85,8 +85,8 @@ body.dark {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
   --outline: #ffffff05;
-  --brand: #550567;
-  --brand-hover: rgb(116, 15, 139);
+  --brand: #000000;
+  --brand-hover: rgb(33, 33, 33);
 }
 
 img {

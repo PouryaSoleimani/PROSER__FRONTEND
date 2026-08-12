@@ -1,6 +1,7 @@
 "use client";
 import MoltenMetal from "@/components/MoltenMetal";
 import { Button } from "@/components/ui/button";
+import { CaretDownIcon } from "@phosphor-icons/react";
 
 const HomePageHeroSection = () => {
   return (
@@ -10,19 +11,24 @@ const HomePageHeroSection = () => {
         <div className="content flex flex-col items-center-safe gap-16">
           <div className="pill h-fit bg-fuchsia-950/10 backdrop-blur-lg rounded-full flex items-center gap-3 pl-2 py-2 pr-4 border">
             <span className="bg-white text-black py-1 px-3 font-semibold text-sm rounded-full">NEW</span>
-            <h4 className="text-zinc-300 font-bold">SoundCloud Go+</h4>
+            <h4 className="text-zinc-300 font-bold">
+              <span className="text-orange-500">SoundCloud</span> GO+
+            </h4>
           </div>
           <div className="hero__moto max-w-1/2 text-5xl font-bold text-center">
-            <h4 className="jetbrains">ACCESS EVERY SUBSCRIPTION YOUT WANT IN JUST ON PLACE</h4>
+            <h4 className="jetbrains leading-14">ACCESS EVERY SUBSCRIPTION YOUT WANT IN JUST ONE PLACE</h4>
           </div>
           <div className="buttons flex gap-4">
             <Button variant={"white"} size={"xl"} className={"rounded-sm"}>
-              Get Started
+              See Products
             </Button>
             <Button variant={"blur"} size={"xl"} className={"rounded-sm"}>
               Learn More
             </Button>
           </div>
+          <a href="#" className="bg-foreground p-2 text-background rounded-lg animate-bounce cursor-pointer">
+            <CaretDownIcon className="size-8" />
+          </a>
         </div>
       </div>
     </div>
