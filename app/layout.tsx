@@ -10,8 +10,8 @@ import { Providers } from "./providers";
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "PROSER",
-  description: "Access all platform subscription within one place",
+  title: "ON-LOAD",
+  description: "Load Your Weapon Online",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import HeaderDialog from "@/components/modules/Header/HeaderDialog";
 import { Separator } from "@/components/ui/separator";
@@ -32,6 +33,27 @@ const HeaderComponent = () => {
     setIsDarkMode(document.body.classList.contains("dark"));
   };
 
+  useEffect(() => {
+    const toggleActiveNav = (e: any) => {
+      document.querySelectorAll("a").forEach(item => {
+        item.classList.remove('active')
+      })
+      e.currentTarget.classList.add('active')
+    }
+
+    document.querySelectorAll('.header__anchor').forEach(item => {
+      item.addEventListener('click', toggleActiveNav)
+    })
+
+    return () => {
+      document.querySelectorAll('.header__anchor').forEach(item => {
+        item.removeEventListener('click', toggleActiveNav)
+      })
+    }
+  }, [])
+
+
+
   return (
     <div className={cn("fixed left-0 right-0 top-0 z-2 transition-all duration-500 ease-in-out", scrollY >= 50 && '-top-9')}>
       <div className="banner bg-background text-foreground py-2 grid justify-center">
@@ -58,12 +80,12 @@ const HeaderComponent = () => {
         </div>
       </div>
       <nav className="bg-background pt-2 pb-1 flex items-center justify-around text-xs">
-        <a href="#CATEGORIES" className="underline decoration-2 border-foreground underline-offset-6">Categories</a>
-        <a href="#" className="">Products</a>
-        <a href="#" className="">Outlet</a>
-        <a href="#FREQUENTLY_ADDED" className="">Frequently Added</a>
-        <a href="#" className="">Subscribe</a>
-        <a href="#" className="">Become A Seller</a>
+        <a href="#CATEGORIES" className="header__anchor">Categories</a>
+        <a href="#" className="header__anchor">Products</a>
+        <a href="#" className="header__anchor">Outlet</a>
+        <a href="#FREQUENTLY_ADDED" className="header__anchor">Frequently Added</a>
+        <a href="#" className="header__anchor">Subscribe</a>
+        <a href="#" className="header__anchor">Become A Seller</a>
       </nav>
     </div>
 

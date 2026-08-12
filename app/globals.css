@@ -201,3 +201,8 @@ img {
 .smt-32 {
   scroll-margin-top: 32px;
 }
+.header__anchor.active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
