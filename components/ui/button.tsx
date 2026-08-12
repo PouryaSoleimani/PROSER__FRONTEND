@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const buttonVariants = cva("group/button outline-2 outline-outline ring-0 border-0 cursor-pointer inline-flex rounded-none shrink-0 items-center justify-center bg-clip-padding text-xs font-medium whitespace-nowrap transition-all duration-400 ease-in-out  select-none focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-1 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4", {
+const buttonVariants = cva("group/button outline-2 outline-outline ring-0 border-0 cursor-pointer inline-flex rounded-none shrink-0 items-center justify-center bg-clip-padding text-xs font-medium whitespace-nowrap transition-none duration-400 ease-in-out  select-none focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-1 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4", {
   variants: {
     variant: {
       default: "bg-black text-white border-0 ring-0 ",

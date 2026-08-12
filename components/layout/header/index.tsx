@@ -13,7 +13,9 @@ import useGlobalLoading from "@/store/globalLoading";
 
 const HeaderComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeNav, setActiveNav] = useState("")
+
   const isLoading = useGlobalLoading((s) => s.isLoading)
   const setLoadingFalse = useGlobalLoading(s => s.setLoadingFalse)
 
@@ -63,6 +65,7 @@ const HeaderComponent = () => {
       document.querySelectorAll("header__anchor").forEach(item => {
         item.classList.remove('active')
       })
+      console.log("aCTIVE")
       e.currentTarget.classList.add('active')
     }
 
@@ -76,6 +79,7 @@ const HeaderComponent = () => {
       })
     }
   }, [])
+
   return (
     <>
       {!isLoading ? (
@@ -86,7 +90,7 @@ const HeaderComponent = () => {
           </div>
 
           {/* HEADER MAIN */}
-          <div className="bg-transparent w-full backdrop-blur-3xl py-1.5 shadow-xs shadow-muted grid grid-cols-2 items-center justify-between rounded-none mx-auto px-24">
+          <div className="bg-accent/50 w-full backdrop-blur-3xl py-1.5 shadow-xs shadow-muted grid grid-cols-2 items-center justify-between rounded-none mx-auto px-24">
             {/* MAIN LEFT */}
             <div className="flex gap-4 items-center" id="LOGO">
               <h2 className="text-3xl m-0 blackops text-background grid items-center h-fit bg-foreground px-4 py-1 font-semibold">ON-LOAD</h2>
@@ -116,12 +120,9 @@ const HeaderComponent = () => {
 
           {/* BOTTOM NAV */}
           <nav className="bg-background text-foreground font-semibold pt-2 pb-1 flex items-center justify-between px-25 text-xs">
-            <a href="#CATEGORIES" className="header__anchor">Categories</a>
-            <a href="#" className="header__anchor">Products</a>
-            <a href="#" className="header__anchor">Outlet</a>
-            <a href="#FREQUENTLY_ADDED" className="header__anchor">Frequently Added</a>
-            <a href="#" className="header__anchor">Subscribe</a>
-            <a href="#" className="header__anchor">Become A Seller</a>
+            {navLinks.map((link) => (
+              <a onClick={() => setActiveNav(link.href.replace("#", ""))} key={link.id} href={link.href} className={cn("header__anchor", link.href.replace("#", "") == activeNav && "active")}>{link.text}</a>
+            ))}
           </nav>
         </div>
       ) : (
@@ -140,3 +141,13 @@ const HeaderComponent = () => {
 };
 
 export default HeaderComponent;
+
+
+const navLinks = [
+  { id: 1, text: 'Categories', href: "#CATEGORIES" },
+  { id: 2, text: 'Products', href: "#PRODUCTS" },
+  { id: 3, text: 'Outlet', href: "#OUTLET" },
+  { id: 4, text: 'Frequently Added', href: "#FREQUENTLY_ADDED" },
+  { id: 5, text: 'Subscribe', href: "#SUBSCRIBE" },
+  { id: 6, text: 'Become A Seller', href: "#BECOME" }
+]

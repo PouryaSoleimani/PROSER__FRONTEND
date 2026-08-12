@@ -51,8 +51,8 @@ body {
   scroll-behavior: smooth;
   overscroll-behavior: none;
   margin: 0;
-  padding: 0;
   grid-template-rows: auto 1fr auto;
+  
   accent-color: var(--foreground);
   text-emphasis-color: var(--foreground);
 }
