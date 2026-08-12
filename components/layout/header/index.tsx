@@ -61,7 +61,7 @@ const HeaderComponent = () => {
       </div>
 
       {/* HEADER MAIN */}
-      <div className="bg-white/10 w-full backdrop-blur-2xl py-1.5 shadow-xs shadow-muted grid grid-cols-2 items-center justify-between rounded-none mx-auto px-24">
+      <div className="bg-accent/30 w-full backdrop-blur-2xl py-1.5 shadow-xs shadow-muted grid grid-cols-2 items-center justify-between rounded-none mx-auto px-24">
         {/* MAIN LEFT */}
         <div className="flex gap-4 items-center" id="LOGO">
           <h2 className="text-3xl m-0 blackops text-background grid items-center h-fit bg-foreground px-4 py-1 mix-blend-difference font-semibold">ON-LOAD</h2>
@@ -90,7 +90,7 @@ const HeaderComponent = () => {
       </div>
 
       {/* BOTTOM NAV */}
-      <nav className="bg-background pt-2 pb-1 flex items-center justify-between px-25 text-xs">
+      <nav className="bg-black text-white pt-2 pb-1 flex items-center justify-between px-25 text-xs">
         <a href="#CATEGORIES" className="header__anchor">Categories</a>
         <a href="#" className="header__anchor">Products</a>
         <a href="#" className="header__anchor">Outlet</a>
