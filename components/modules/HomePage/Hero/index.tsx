@@ -27,7 +27,7 @@ const HomePageHeroSection = () => {
           </div>
           <div className="hero__moto text-3xl font-bold text-center">
             <h2 className="text-6xl underline m-0 blackops font-semibold bg-background py-1 w-fit px-3 rounded-xs mx-auto">ON-LOAD</h2>
-            <h4 className="jetbrains leading-10 mt-3 bg-transparent backdrop-blur-3xl p-1 rounded-xl text-foreground ">Choose and Load Your Weapons Online. <br /> We Will Take Care Of Cups</h4>
+            <h4 className="jetbrains leading-10 mt-3 bg-transparent backdrop-blur-3xl p-2 text-foreground ">Choose and Load Your Weapons Online. <br /> We Will Take Care Of Cups</h4>
           </div>
           <div className="buttons flex gap-4">
             <Button role="link" variant={"white"} size={"xl"} >
