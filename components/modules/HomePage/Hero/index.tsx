@@ -11,7 +11,7 @@ const HomePageHeroSection = () => {
         squareSize={40}
         direction='diagonal'
         borderColor="#303030"
-        hoverFillColor='#222'
+        hoverFillColor='#fff'
         shape='square'
         hoverTrailAmount={0}
         hoverColor="#222222"
