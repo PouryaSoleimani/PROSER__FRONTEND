@@ -14,7 +14,7 @@ const HeaderBasketComponent = () => {
       <DropdownMenuTrigger render={<Button variant="ghost" />}>
         <BasketIcon className="size-6" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className={'w-fit p-4 mt-3 rounded-sm outline-6 outline-outline'}>
+      <DropdownMenuContent className={'w-fit p-4 mt-3 rounded-none outline-6 outline-outline'}>
         <DropdownMenuGroup className={'pb-2'}>
           Your Shopping Basket
         </DropdownMenuGroup>

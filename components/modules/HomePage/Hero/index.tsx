@@ -30,10 +30,10 @@ const HomePageHeroSection = () => {
             <h4 className="jetbrains leading-10 mt-3 bg-transparent backdrop-blur-3xl p-1 rounded-xl text-foreground ">Choose and Load Your Weapons Online. <br /> We Will Take Care Of Cups</h4>
           </div>
           <div className="buttons flex gap-4">
-            <Button role="link" variant={"white"} size={"xl"} className={"rounded-sm"}>
+            <Button role="link" variant={"white"} size={"xl"} >
               See Products
             </Button>
-            <Button variant={"blur"} size={"xl"} className={"rounded-sm"}>
+            <Button variant={"blur"} size={"xl"} >
               Learn More
             </Button>
           </div>

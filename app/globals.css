@@ -17,6 +17,7 @@
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground-alpha: oklch(74.763% 0.00008 271.152 / 0.2);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -67,6 +68,7 @@ body.dark {
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
+  --muted-foreground-alpha: oklch(35.618% 0.00004 271.152 / 0.1);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
@@ -160,4 +162,37 @@ img {
   font-family: "Black Ops One", system-ui;
   font-weight: 400;
   font-style: normal;
+}
+
+.grided-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  background-image:
+    linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--muted-foreground-alpha) 25%,
+      var(--muted-foreground-alpha) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--muted-foreground-alpha) 75%,
+      var(--muted-foreground-alpha) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--muted-foreground-alpha) 25%,
+      var(--muted-foreground-alpha) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--muted-foreground-alpha) 75%,
+      var(--muted-foreground-alpha) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 85px 85px;
+  position: relative;
 }
