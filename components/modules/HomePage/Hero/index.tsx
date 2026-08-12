@@ -17,7 +17,7 @@ const HomePageHeroSection = () => {
         hoverColor="#222222"
         size={40}
       />
-      <div className="absolute inset-0 border border-t-0 h-full grid align-items-center items-center justify-center justify-items-center">
+      <div className="absolute inset-0 h-full grid align-items-center items-center justify-center justify-items-center">
         <div className="content flex flex-col items-center-safe gap-16">
           <div className="pill h-fit bg-fuchsia-950/10 backdrop-blur-lg rounded-full flex items-center gap-3 pl-2 py-2 pr-4 border">
             <span className="bg-white text-black py-1 px-3 font-semibold text-sm rounded-full">NEW</span>

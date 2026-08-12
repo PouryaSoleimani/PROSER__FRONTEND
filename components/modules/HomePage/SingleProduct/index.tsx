@@ -9,11 +9,13 @@ type SingleProductCardPropsType = {
   title: string;
   price: string | number;
   id: number;
+  badge?: string
 };
-const SingleProductCardComponent = ({ src, title, price, id }: SingleProductCardPropsType) => {
+
+const SingleProductCardComponent = ({ src, title, price, id, badge }: SingleProductCardPropsType) => {
   return (
     <Card className="relative cursor-pointer overflow-hidden group border-0 ring-0 hover:outline-accent transition-all duration-300 ease-in-out hover:scale-[1.01]  outline-8 outline-outline mx-auto w-full max-w-sm pt-0 rounded-none">
-      <Image src={src} width={500} height={500} alt="" className="transition-all w-full h-full rounded-none scale-[1.025] duration-300  ease-in-out object-cover object-center overflow-hidden border-white bg-black ring-0 outline-0" />
+      <Image src={src} width={500} height={500} alt="" className="transition-all w-full h-full rounded-none scale-[1.05] duration-300  ease-in-out object-cover object-center overflow-hidden border-white bg-black ring-0 outline-0" />
       <CardHeader>
         <CardAction>
           <Badge variant="secondary">Featured</Badge>

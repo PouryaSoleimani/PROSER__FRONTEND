@@ -8,6 +8,7 @@ import { MoonIcon, StarFourIcon, SunIcon } from "@phosphor-icons/react";
 import HeaderBasketComponent from "@/components/modules/Header/HeaderBasket";
 import HeaderSearchInputComponent from "@/components/modules/Header/HeaderSearchInput";
 import { cn } from "@/lib/utils";
+import HeaderSheetComponent from "@/components/modules/Header/HeaderSheet";
 
 const HeaderComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -54,15 +55,25 @@ const HeaderComponent = () => {
 
   return (
     <div className={cn("fixed left-0 right-0 top-0 z-2 transition-all duration-500 ease-in-out", scrollY >= 50 && '-top-9')}>
+      {/* PROMO BAR */}
       <div className="banner bg-black text-white py-2 grid justify-center">
         <span className="flex items-center gap-3 text-sm font-bold"><StarFourIcon weight="fill" className="text-yellow-500 size-5" /> 30% OFF FOR 4TH OF JULY</span>
       </div>
-      <div className="bg-white/10 w-full backdrop-blur-2xl py-1.5 border-1 border-muted shadow-xs shadow-muted grid grid-cols-2 items-center justify-between rounded-none mx-auto px-6">
+
+      {/* HEADER MAIN */}
+      <div className="bg-white/10 w-full backdrop-blur-2xl py-1.5 shadow-xs shadow-muted grid grid-cols-2 items-center justify-between rounded-none mx-auto px-24">
+        {/* MAIN LEFT */}
         <div className="flex gap-4 items-center" id="LOGO">
           <h2 className="text-3xl m-0 blackops text-background grid items-center h-fit bg-foreground px-4 py-1 mix-blend-difference font-semibold">ON-LOAD</h2>
         </div>
+
+        {/* MAIN RIGHT */}
         <div className="flex gap-2 justify-self-end">
+
           <HeaderSearchInputComponent />
+          <Separator orientation="vertical" />
+
+          <HeaderSheetComponent />
           <Separator orientation="vertical" />
 
           <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="p-3">
@@ -77,7 +88,9 @@ const HeaderComponent = () => {
           <HeaderDialog mode="SIGNUP" />
         </div>
       </div>
-      <nav className="bg-background pt-2 pb-1 flex items-center justify-around text-xs">
+
+      {/* BOTTOM NAV */}
+      <nav className="bg-background pt-2 pb-1 flex items-center justify-between px-25 text-xs">
         <a href="#CATEGORIES" className="header__anchor">Categories</a>
         <a href="#" className="header__anchor">Products</a>
         <a href="#" className="header__anchor">Outlet</a>

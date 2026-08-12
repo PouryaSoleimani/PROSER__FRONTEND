@@ -14,7 +14,7 @@ const GridWrapperComponent = ({ title, id }: GridWrapperComponentPropsType) => {
       </h3>
       <div className="w-full ring-0 border-0 rounded-none min-h-400 grid grid-cols-4 place-content-center justify-center gap-8 p-24">
         {Array.from({ length: 12 }).map((item, index) => (
-          <SingleProductCardComponent key={index + 1} title="adsd" src="/GUNS/M_4.png" price={0} id={index + 1} />
+          <SingleProductCardComponent key={index + 1} title="adsd" src="/GUNS/DESERT_EAGLE.png" price={0} id={index + 1} />
         ))}
       </div>
     </section>
