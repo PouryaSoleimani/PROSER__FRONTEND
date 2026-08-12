@@ -20,7 +20,7 @@ body {
   overscroll-behavior: none;
   margin: 0;
   padding: 0;
-  grid-template-rows: 1fr 10fr 1fr;
+  grid-template-rows: 1fr 14fr 1fr;
 }
 
 body.dark {
@@ -29,6 +29,11 @@ body.dark {
   --gray-light: #ffffff;
   --gray: #808080;
   --accent: #1a1a1a;
+}
+
+img {
+  height: auto;
+  width: auto;
 }
 
 @theme inline {
@@ -154,4 +159,8 @@ body.dark {
   html {
     @apply font-mono;
   }
+}
+
+.jetbrains {
+  font-family: "JetBrains Mono";
 }
