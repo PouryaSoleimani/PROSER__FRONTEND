@@ -198,8 +198,8 @@ img {
   position: relative;
 }
 
-.smt-32 {
-  scroll-margin-top: 32px;
+.smt-40 {
+  scroll-margin-top: 40px;
 }
 .header__anchor.active {
   text-decoration: underline;

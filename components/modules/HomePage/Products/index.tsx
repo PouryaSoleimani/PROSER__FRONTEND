@@ -8,7 +8,7 @@ type GridWrapperComponentPropsType = {
 
 const GridWrapperComponent = ({ title, id }: GridWrapperComponentPropsType) => {
   return (
-    <section id={id} className="grided-container smt-32">
+    <section id={id} className="grided-container smt-40">
       <h3 id="products__h3" className="blackops pt-30 grid place-items-center text-4xl underline font-medium">
         {title}
       </h3>
