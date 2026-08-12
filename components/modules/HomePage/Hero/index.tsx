@@ -1,9 +1,11 @@
 "use client";
 import ShapeGrid from "@/components/ShapeGrid";
 import { Button } from "@/components/ui/button";
+import useGlobalLoading from "@/store/globalLoading";
 import { CaretDownIcon } from "@phosphor-icons/react";
 
 const HomePageHeroSection = () => {
+
   return (
     <div style={{ width: '100%', height: '1200px', position: 'relative' }}>
       <ShapeGrid
@@ -19,10 +21,10 @@ const HomePageHeroSection = () => {
       />
       <div className="absolute inset-0 h-full grid align-items-center items-center justify-center justify-items-center">
         <div className="content flex flex-col items-center-safe gap-16">
-          <div className="pill h-fit bg-fuchsia-950/10 backdrop-blur-lg rounded-full flex items-center gap-3 pl-2 py-2 pr-4 border">
-            <span className="bg-white text-black py-1 px-3 font-semibold text-sm rounded-full">NEW</span>
-            <h4 className="text-zinc-300 font-bold">
-              <span className="text-foreground">DESERT EAGLE</span> <span className="text-muted-foreground">9mm</span>
+          <div className="pill h-fit bg-foreground text-background rounded-full flex items-center gap-3 pl-2 py-2 pr-4 border">
+            <span className="text-foreground bg-background py-1 px-3 font-semibold text-sm rounded-full">NEW</span>
+            <h4 className="font-bold">
+              <span className="text-background">DESERT EAGLE</span> <span className="text-muted-foreground">9mm</span>
             </h4>
           </div>
           <div className="hero__moto text-3xl font-bold text-center">

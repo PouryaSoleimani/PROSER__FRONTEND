@@ -6,12 +6,12 @@ import FooterComponent from "@/components/layout/footer";
 import { JetBrains_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Providers } from "./providers";
-
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: "ON-LOAD",
   description: "Load Your Weapon Online",
+  creator: "Pourya Soleimani"
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet" />
       </head>
-      <body className="min-h-full grid flex-col grid-rows-3 ">
+      <body className="min-h-full grid flex-col grid-rows-3 transition-all duration-300 ease-in-out ">
         <Providers>
           <HeaderComponent />
           {children}

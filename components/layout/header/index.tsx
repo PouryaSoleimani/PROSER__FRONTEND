@@ -9,11 +9,15 @@ import HeaderBasketComponent from "@/components/modules/Header/HeaderBasket";
 import HeaderSearchInputComponent from "@/components/modules/Header/HeaderSearchInput";
 import { cn } from "@/lib/utils";
 import HeaderSheetComponent from "@/components/modules/Header/HeaderSheet";
+import useGlobalLoading from "@/store/globalLoading";
 
 const HeaderComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isLoaded, setIsloaded] = useState(false);
+  const isLoading = useGlobalLoading((s) => s.isLoading)
+  const setLoadingFalse = useGlobalLoading(s => s.setLoadingFalse)
+
+  console.log({ isLoading })
 
   useEffect(() => {
     const raw = localStorage.getItem('dark')
@@ -25,8 +29,9 @@ const HeaderComponent = () => {
     setIsDarkMode(isDarkLocalStorage);
 
     setTimeout(() => {
-      setIsloaded(true)
+      setLoadingFalse()
     }, 300);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
@@ -75,7 +80,7 @@ const HeaderComponent = () => {
   }, [])
   return (
     <>
-      {isLoaded ? (
+      {!isLoading ? (
         <div className={cn("fixed left-0 right-0 top-0 z-2 transition-all duration-500 ease-in-out", isScrolled && "-top-9")}>
           {/* PROMO BAR */}
           <div className="banner bg-black text-white py-2 grid justify-center">
@@ -133,8 +138,6 @@ const HeaderComponent = () => {
       )}
 
     </>
-
-
   );
 };
 
