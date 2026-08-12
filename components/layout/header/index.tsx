@@ -52,11 +52,9 @@ const HeaderComponent = () => {
     }
   }, [])
 
-
-
   return (
     <div className={cn("fixed left-0 right-0 top-0 z-2 transition-all duration-500 ease-in-out", scrollY >= 50 && '-top-9')}>
-      <div className="banner bg-background text-foreground py-2 grid justify-center">
+      <div className="banner bg-black text-white py-2 grid justify-center">
         <span className="flex items-center gap-3 text-sm font-bold"><StarFourIcon weight="fill" className="text-yellow-500 size-5" /> 30% OFF FOR 4TH OF JULY</span>
       </div>
       <div className="bg-white/10 w-full backdrop-blur-2xl py-1.5 border-1 border-muted shadow-xs shadow-muted grid grid-cols-2 items-center justify-between rounded-none mx-auto px-6">
