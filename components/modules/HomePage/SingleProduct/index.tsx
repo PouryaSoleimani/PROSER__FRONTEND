@@ -20,7 +20,7 @@ const SingleProductCardComponent = ({ src, title, price, id, badge }: SingleProd
 
 
   const buyProductHandler = (id: number | string) => {
-    toast.success('Item Added To Cart')
+    toast.success(`Item #${id} Added To Your Cart`)
   }
 
   return (

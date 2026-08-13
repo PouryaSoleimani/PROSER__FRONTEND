@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={cn("h-full", "antialiased", "font-mono", jetbrainsMono.variable)} suppressHydrationWarning>
+    <html data-scroll-behavior="smooth" lang="en" className={cn("h-full", "antialiased", "font-mono", jetbrainsMono.variable)} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
