@@ -18,7 +18,6 @@ const HeaderComponent = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeNav, setActiveNav] = useState("");
   const location = usePathname();
-  console.log({ location });
   const isLoading = useGlobalLoading((s) => s.isLoading);
   const setLoadingFalse = useGlobalLoading((s) => s.setLoadingFalse);
 
