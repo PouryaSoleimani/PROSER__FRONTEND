@@ -35,7 +35,10 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
         close.current?.click()
       }, 100);
     } else {
-      toast.error('Unknown Error')
+      toast.error(data.message)
+      setTimeout(() => {
+        close.current?.click()
+      }, 100);
     }
   }
 
