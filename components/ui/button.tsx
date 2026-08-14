@@ -10,10 +10,11 @@ const buttonVariants = cva("group/button outline-2 outline-outline ring-0 border
       outline: "bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:bg-input/30 dark:hover:bg-input/50",
       secondary: "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
       ghost: "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50 border-0 ring-0 outline-0",
-      destructive: "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
+      destructive: "bg-destructive text-white outine-[9px] outline-white/20 *:text-white ",
       link: "text-primary underline-offset-4 hover:underline",
       white: "bg-foreground text-background ",
       blur: "bg-foreground/5 outline-2 outline-border backdrop-blur-2xl hover:bg-white/20",
+      green: "bg-success outine-[9px] outline-white/20"
     },
     size: {
       default: "h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",

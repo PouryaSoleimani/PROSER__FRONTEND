@@ -45,9 +45,17 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
   const loginHandler = async () => {
     const body = { username: _username, password: _password }
     axios.post('http://localhost:8000/users/login', body).then((res) => {
-      toast.success('Logged in Successfully')
-      return res.data.data
-    }).catch(() => {
+      if (res.data.ok) {
+        toast.success('Logged in Successfully')
+        console.log({ res: res })
+        setUserToStore(_username, _password)
+        setTimeout(() => {
+          close.current?.click()
+        }, 200);
+        return res.data.data
+      }
+    }).catch((err) => {
+      console.log({ err })
       toast.error("No Account Were Found , Please SignUp First")
       setTimeout(() => {
         close.current?.click()
@@ -61,7 +69,7 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
         <DialogTrigger render={<Button variant={mode == "LOGIN" ? "outline" : "default"}>{mode == "LOGIN" ? "Login" : "SignUp"}</Button>} />
         <DialogContent className="sm:max-w-sm ring-0">
           <DialogHeader>
-            <DialogTitle>{mode == "LOGIN" ? "WELCOME BACK 🎉" : "JOIN US NOW ❤"}</DialogTitle>
+            <DialogTitle>{mode == "LOGIN" ? "WELCOME BACK | LOGIN" : "JOIN US NOW | SIGNUP"}</DialogTitle>
             <DialogDescription></DialogDescription>
           </DialogHeader>
           <FieldGroup>

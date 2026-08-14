@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 
 const HeaderSearchInputComponent = () => {
   return (
-    <Field>
+    <Field className="mt-4 lg:mt-0">
       <ButtonGroup>
         <Input id="input-button-group" placeholder="Type to search..." className="bg-black/30 rounded-none" />
         <Button variant="default">Search</Button>

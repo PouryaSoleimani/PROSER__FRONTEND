@@ -4,7 +4,7 @@ import HeaderDialog from "@/components/modules/Header/HeaderDialog";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { MoonIcon, StarFourIcon, SunIcon } from "@phosphor-icons/react";
+import { MoonIcon, SignOutIcon, StarFourIcon, SunIcon, UserIcon } from "@phosphor-icons/react";
 import HeaderBasketComponent from "@/components/modules/Header/HeaderBasket";
 import HeaderSearchInputComponent from "@/components/modules/Header/HeaderSearchInput";
 import { cn } from "@/lib/utils";
@@ -12,6 +12,8 @@ import HeaderSheetComponent from "@/components/modules/Header/HeaderSheet";
 import useGlobalLoading from "@/store/globalLoading";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import userInfosStore from "@/store/userInfosStore";
+import { div } from "three/src/nodes/math/OperatorNode.js";
 
 const HeaderComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
@@ -20,6 +22,8 @@ const HeaderComponent = () => {
   const location = usePathname();
   const isLoading = useGlobalLoading((s) => s.isLoading);
   const setLoadingFalse = useGlobalLoading((s) => s.setLoadingFalse);
+  const isUserLoggedIn = userInfosStore(s => s.isLoggedIn)
+  const username = userInfosStore(s => s.username)
 
   useEffect(() => {
     const raw = localStorage.getItem("dark");
@@ -92,30 +96,46 @@ const HeaderComponent = () => {
           </div>
 
           {/* HEADER MAIN */}
-          <div className="bg-accent/50 w-full backdrop-blur-3xl shadow-xs shadow-muted grid grid-cols-1 gap-4 lg:gap-0 lg:grid-cols-2 items-center justify-between rounded-none mx-auto pr-4 pl-4 py-4 lg:py-1.5 md:px-16 lg:px-24">
+          <div className="bg-accent/50 w-full backdrop-blur-3xl shadow-xs shadow-muted grid grid-cols-1 gap-4 lg:gap-0 lg:grid-cols-[auto_1fr] lg:py-4 items-center justify-between rounded-none mx-auto pr-4 pl-4 py-4 xl:py-2 md:px-16 lg:px-24">
             {/* MAIN LEFT */}
             <Link href={"/"} className="flex gap-4 items-center" id="LOGO">
-              <h2 className="text-3xl w-full lg:w-fit m-0 blackops text-background grid items-center h-it bg-foreground px-4 py-1 font-semibold">ON-LOAD</h2>
+              <h2 className="text-3xl w-full lg:w-fit m-0 blackops lg:text-background grid items-center h-it bg-transparent lg:bg-foreground px-4 py-1 font-semibold">ON-LOAD</h2>
             </Link>
 
             {/* MAIN RIGHT */}
-            <div className="flex gap-2 lg:justify-self-end">
+            <div className="flex flex-col lg:flex-row-reverse lg:gap-2 lg:justify-self-end">
+              <div className="flex gap-2 justify-end">
+                <HeaderSheetComponent />
+                <Separator orientation="vertical" />
+
+                <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="p-3">
+                  {isDarkMode ? <SunIcon className="size-6" /> : <MoonIcon className="size-6" />}
+                </Button>
+
+                <Separator orientation="vertical" />
+                <HeaderBasketComponent />
+
+                <Separator orientation="vertical" />
+                {!isUserLoggedIn ? (
+                  <>
+                    <HeaderDialog mode="LOGIN" />
+                    <HeaderDialog mode="SIGNUP" />
+                  </>
+                ) : (
+                  <div className="flex items-center gap-3">
+                    <Button variant={'green'}>
+                      {username}
+                      <UserIcon />
+                    </Button>
+                    <Button variant={'destructive'}>
+                      <SignOutIcon size={32} />
+                    </Button>
+                  </div>
+                )}
+              </div>
+
+              <Separator orientation="vertical" />
               <HeaderSearchInputComponent />
-              <Separator orientation="vertical" />
-
-              <HeaderSheetComponent />
-              <Separator orientation="vertical" />
-
-              <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="p-3">
-                {isDarkMode ? <SunIcon className="size-6" /> : <MoonIcon className="size-6" />}
-              </Button>
-
-              <Separator orientation="vertical" />
-              <HeaderBasketComponent />
-
-              <Separator orientation="vertical" />
-              <HeaderDialog mode="LOGIN" />
-              <HeaderDialog mode="SIGNUP" />
             </div>
           </div>
 
