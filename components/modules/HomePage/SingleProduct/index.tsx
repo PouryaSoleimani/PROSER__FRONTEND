@@ -33,7 +33,7 @@ const SingleProductCardComponent = ({ src, title, price, id, badge }: SingleProd
         draggable="false"
         className="transition-transform w-full h-full rounded-none scale-[1.05] duration-300  ease-in-out object-cover object-center overflow-hidden border-white bg-black ring-0 outline-0"
       />
-      <CardHeader>
+      <CardHeader className="grid grid-row-2">
         <CardAction className="flex flex-col gap-1.5">
           <Badge variant="outline" className="h-6 text-[11px] bg-success w-full"> Available </Badge>
           <Badge variant="outline" className="h-6 text-[11px] w-full"> Pistols </Badge>

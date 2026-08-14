@@ -92,14 +92,14 @@ const HeaderComponent = () => {
           </div>
 
           {/* HEADER MAIN */}
-          <div className="bg-accent/50 w-full backdrop-blur-3xl py-1.5 shadow-xs shadow-muted grid grid-cols-2 items-center justify-between rounded-none mx-auto px-24">
+          <div className="bg-accent/50 w-full backdrop-blur-3xl shadow-xs shadow-muted grid grid-cols-1 gap-4 lg:gap-0 lg:grid-cols-2 items-center justify-between rounded-none mx-auto pr-4 pl-4 py-4 lg:py-1.5 md:px-16 lg:px-24">
             {/* MAIN LEFT */}
             <Link href={"/"} className="flex gap-4 items-center" id="LOGO">
-              <h2 className="text-3xl m-0 blackops text-background grid items-center h-fit bg-foreground px-4 py-1 font-semibold">ON-LOAD</h2>
+              <h2 className="text-3xl w-full lg:w-fit m-0 blackops text-background grid items-center h-it bg-foreground px-4 py-1 font-semibold">ON-LOAD</h2>
             </Link>
 
             {/* MAIN RIGHT */}
-            <div className="flex gap-2 justify-self-end">
+            <div className="flex gap-2 lg:justify-self-end">
               <HeaderSearchInputComponent />
               <Separator orientation="vertical" />
 

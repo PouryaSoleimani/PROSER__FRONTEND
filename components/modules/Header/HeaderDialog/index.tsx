@@ -29,7 +29,7 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
     const data = (await axios.post('http://localhost:8000/users/create', body)).data
     if (data.ok) {
       toast.success('You Logged In Successfully')
-      setUserToStore(data.data.newUserDatas.username, data.data.newUserDatas.password)
+      setUserToStore(data.data.newUserInfos.username, data.data.newUserInfos.password)
       setTimeout(() => {
         close.current?.click()
       }, 100);
