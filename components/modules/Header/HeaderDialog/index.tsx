@@ -7,30 +7,32 @@ import { Label } from "@/components/ui/label";
 import { useRef, useState } from "react";
 import axios from 'axios'
 import { toast } from "sonner";
-import { Clicker_Script } from "next/font/google";
+import userInfosStore from "@/store/userInfosStore";
 
 type HeaderDialogPropsType = {
   mode: "LOGIN" | "SIGNUP";
 };
 
 const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
-  console.log({ mode })
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const close = useRef(null)
+  const [_username, setUsername] = useState("")
+  const [_password, setPassword] = useState("")
+  const close = useRef<HTMLButtonElement | null>(null)
+  const { username, password, setUserInfos } = userInfosStore();
+
+
+  const setUserToStore = (user: string, pass: string) => {
+    setUserInfos(user, pass)
+  }
 
   const loginHandler = async () => {
-    const body = {
-      username,
-      password
-    }
+    const body = { username: _username, password: _password }
     const data = (await axios.post('http://localhost:8000/users/create', body)).data
     if (data.ok) {
       toast.success('You Logged In Successfully')
-      console.log({ close })
-      if (close) {
-        close.current!.click()
-      }
+      setUserToStore(data.data.newUserDatas.username, data.data.newUserDatas.password)
+      setTimeout(() => {
+        close.current?.click()
+      }, 100);
     } else {
       toast.error('Unknown Error')
     }
@@ -39,7 +41,6 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
   const signUpHandler = () => {
 
   }
-
 
   return (
     <Dialog>
@@ -53,11 +54,11 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
           <FieldGroup>
             <Field>
               <Label htmlFor="name-1">Username | Phone-number</Label>
-              <Input value={username} onChange={(e) => setUsername(e.target.value)} id="name-1" name="username" autoComplete="name" />
+              <Input value={_username} onChange={(e) => setUsername(e.target.value)} id="name-1" name="username" autoComplete="name" />
             </Field>
             <Field>
               <Label htmlFor="username-1">Password</Label>
-              <Input value={password} onChange={e => setPassword(e.target.value)} id="username-1" name="username" type="password" />
+              <Input value={_password} onChange={e => setPassword(e.target.value)} id="username-1" name="username" type="password" />
             </Field>
           </FieldGroup>
           <DialogFooter>

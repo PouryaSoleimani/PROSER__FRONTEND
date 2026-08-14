@@ -66,7 +66,6 @@ const HeaderComponent = () => {
       document.querySelectorAll("header__anchor").forEach((item) => {
         item.classList.remove("active");
       });
-      console.log("aCTIVE");
       e.currentTarget.classList.add("active");
     };
 
