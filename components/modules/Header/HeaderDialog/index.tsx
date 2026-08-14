@@ -24,12 +24,12 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
     setUserInfos(user, pass)
   }
 
-  const loginHandler = async () => {
+  const signUpHandler = async () => {
     const body = { username: _username, password: _password }
     const data = (await axios.post('http://localhost:8000/users/create', body)).data
     console.log({ data })
     if (data.ok) {
-      toast.success('You Logged In Successfully')
+      toast.success('You Signed Up Successfully')
       setUserToStore(data.data.newUserInfos.username, data.data.newUserInfos.password)
       setTimeout(() => {
         close.current?.click()
@@ -39,7 +39,7 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
     }
   }
 
-  const signUpHandler = () => {
+  const loginHandler = () => {
 
   }
 
