@@ -160,9 +160,11 @@ img {
     @apply font-mono;
   }
 }
+
 .jetbrains {
   font-family: "JetBrains Mono";
 }
+
 .blackops {
   font-family: "Black Ops One", system-ui;
   font-weight: 400;
@@ -204,6 +206,7 @@ img {
 .smt-40 {
   scroll-margin-top: 40px;
 }
+
 .header__anchor.active {
   text-decoration: underline;
   text-decoration-thickness: 3px;
@@ -242,5 +245,11 @@ img {
 
   40% {
     transform: scaleY(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .smt-40 {
+    scroll-margin-top: 72px;
   }
 }

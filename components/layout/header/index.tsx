@@ -121,7 +121,7 @@ const HeaderComponent = () => {
 
           {/* BOTTOM NAV */}
           {location == "/" && (
-            <nav className="bg-background border-b border-b-foreground/10 text-foreground font-semibold pt-2 pb-1 flex items-center justify-between px-25 text-xs">
+            <nav className="bg-background border-b border-b-foreground/10 text-foreground font-semibold pt-2 pb-1 flex items-center justify-between px-6 lg:px-25 text-xs">
               {navLinks.map((link) => (
                 <a onClick={() => setActiveNav(link.href.replace("#", ""))} key={link.id} href={link.href} className={cn("header__anchor", link.href.replace("#", "") == activeNav && "active")}>
                   {link.text}
