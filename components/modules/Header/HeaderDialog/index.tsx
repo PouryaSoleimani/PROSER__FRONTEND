@@ -39,8 +39,17 @@ const HeaderDialog = ({ mode }: HeaderDialogPropsType) => {
     }
   }
 
-  const loginHandler = () => {
-
+  const loginHandler = async () => {
+    const body = { username: _username, password: _password }
+    axios.post('http://localhost:8000/users/login', body).then((res) => {
+      toast.success('Logged in Successfully')
+      return res.data.data
+    }).catch(() => {
+      toast.error("No Account Were Found , Please SignUp First")
+      setTimeout(() => {
+        close.current?.click()
+      }, 200);
+    })
   }
 
   return (
