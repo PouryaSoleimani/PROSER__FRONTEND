@@ -13,7 +13,6 @@ import useGlobalLoading from "@/store/globalLoading";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import userInfosStore from "@/store/userInfosStore";
-import { div } from "three/src/nodes/math/OperatorNode.js";
 
 const HeaderComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
